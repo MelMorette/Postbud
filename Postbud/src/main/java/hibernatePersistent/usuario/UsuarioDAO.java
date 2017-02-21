@@ -33,7 +33,7 @@ public class UsuarioDAO { //Data Access Object
             tx = session.beginTransaction();
 
             okay = (String) session.save(usuario);
-            System.out.println("OK? " + okay);
+            
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {

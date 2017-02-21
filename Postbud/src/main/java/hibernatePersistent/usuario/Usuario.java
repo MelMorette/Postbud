@@ -22,14 +22,11 @@ public class Usuario implements Serializable{
    @Column(name = "senha")
    private String senha;
    
-   @Column(name = "pais")
-   private String pais;
-   
    @Column(name = "data_nascimento")
    @Temporal(javax.persistence.TemporalType.DATE)
    private Date data_nascimento;
    
- 
+/* Getters and Setters */ 
  
     public String getEmail() {
         return email;
@@ -63,23 +60,11 @@ public class Usuario implements Serializable{
     }
 
 
-   
     public Date getData_nascimento() {
         return data_nascimento;
     }
     public void setData_nascimento(Date data_nascimento) {
         this.data_nascimento = data_nascimento;
-    }
- 
-    public String getPais() {
-        return pais;
-    }
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-  
-
-   
+    }   
 
 }

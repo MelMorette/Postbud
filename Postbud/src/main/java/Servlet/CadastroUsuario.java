@@ -33,7 +33,7 @@ public class CadastroUsuario extends HttpServlet {
         }
 
         if (funciona) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("login.jsp");
         } else {
             response.sendRedirect("erro.jsp");
         }
