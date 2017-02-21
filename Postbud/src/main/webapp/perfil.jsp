@@ -26,8 +26,14 @@
             <!-- Custom Stylesheet -->
             <link rel="stylesheet" href="css/style.css">
 
+<<<<<<< HEAD
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         </head>
+=======
+<head>
+	<meta charset="utf-8">
+	<title>Perfil Postbud</title>
+>>>>>>> 435e4c210cc0948d7778c1d6e4b86b0deb5a66cd
 
         <body>
             <div class="container">
