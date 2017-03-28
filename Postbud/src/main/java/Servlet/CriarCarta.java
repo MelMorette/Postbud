@@ -5,13 +5,15 @@
  */
 package Servlet;
 
+import Carta.Carta;
+import Carta.CartaDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.HibernateException;
 
 /**
  *
@@ -35,9 +37,9 @@ public class CriarCarta extends HttpServlet {
         }
 
         if (funciona) {
-            response.sendRedirect();
+            response.sendRedirect("CÉU");
         } else {
-            response.sendRedirect();
+            response.sendRedirect("INFERNO");
         }
     }
 

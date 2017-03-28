@@ -13,11 +13,11 @@ import javax.persistence.*;
  * @author aluno
  */
 @Entity
-@Table (name = "usuario")
+@Table (name = "cartas")
 public class Carta implements Serializable {
    @Id
-   @Column(name = "email")
-   private String email;
+   @Column(name = "cod_carta")
+   private Long codigo;
    
    @Column(name = "nome")
    private String nome;
@@ -28,49 +28,4 @@ public class Carta implements Serializable {
    @Column(name = "senha")
    private String senha;
    
-   @Column(name = "data_nascimento")
-   @Temporal(javax.persistence.TemporalType.DATE)
-   private Date data_nascimento;
-   
-/* Getters and Setters */ 
- 
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-   
-    public String getSobrenome() {
-        return sobrenome;
-    }
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    
-    public String getSenha() {
-        return senha;
-    }
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-
-    public Date getData_nascimento() {
-        return data_nascimento;
-    }
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }   
-
 }

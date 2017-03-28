@@ -11,20 +11,7 @@ import org.hibernate.SessionFactory;
 public class CartaDAO {
      private static SessionFactory factory;
 
-    public Usuario login(String email, String senha) {
-        Session session = HibernateUtil.abrirSessaoComBD();
-        Usuario usuario= null;
-        try {
-            usuario = (Usuario) session
-                    .createQuery("from Usuario where email= :email and senha= :senha")
-                    .setString("email", email).setString("senha", senha).uniqueResult();
-        } catch (HibernateException he) {
-            he.printStackTrace();
-        }
-        return usuario;
-    }
-
-    public boolean addUsuario(Usuario usuario) throws HibernateException {
+    public boolean addCarta(Carta carta) throws HibernateException {
         Session session = HibernateUtil.abrirSessaoComBD();
         Transaction tx = null;
         boolean funfou = false;
@@ -32,7 +19,7 @@ public class CartaDAO {
         try {
             tx = session.beginTransaction();
 
-            okay = (String) session.save(usuario);
+            okay = (String) session.save(carta);
             
             tx.commit();
         } catch (HibernateException e) {
@@ -49,6 +36,7 @@ public class CartaDAO {
         return funfou;
     }
 
-    public List<Usuario> listUsuario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Carta> listaCartas() {
+        return null;
+    }
 }
