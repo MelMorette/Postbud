@@ -17,7 +17,7 @@
 
         <head>
             <meta charset="utf-8">
-            <title>Login Postbud</title>
+            <title>Perfil Postbud</title>
 
             <!-- Google Fonts -->
             <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
@@ -26,14 +26,8 @@
             <!-- Custom Stylesheet -->
             <link rel="stylesheet" href="css/style.css">
 
-<<<<<<< HEAD
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         </head>
-=======
-<head>
-	<meta charset="utf-8">
-	<title>Perfil Postbud</title>
->>>>>>> 435e4c210cc0948d7778c1d6e4b86b0deb5a66cd
 
         <body>
             <div class="container">
@@ -52,6 +46,7 @@
                             </div>
                             <a href="carta.jsp""><button type="submit"><strong>Escrever...</strong></button></a>
                             <a href=""><button type="submit"><strong>Minhas Cartas</strong></button></a>
+                            <a href="BuscaCarta"><button type="submit"><strong>Editar Carta</strong></button></a>
                             <a href="#"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
                         </div>
 

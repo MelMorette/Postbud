@@ -24,6 +24,11 @@ public class EditarCarta extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+      //TODO recuperar a cartinha da HttpSession
+      //TODO recuperar as informações digitadas na página editarCarta.jsp
+      //TODO chamar o método de editar/atualizarCarta q vc vai criar no CartaDAO
+      //TODO sendRedirect para uma página de sucesso (carta editada.)
+      
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuario = new Usuario();
 

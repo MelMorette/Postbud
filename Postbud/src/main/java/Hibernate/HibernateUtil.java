@@ -1,5 +1,6 @@
 package Hibernate;
 
+import Carta.Carta;
 import hibernatePersistent.usuario.Usuario;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,6 +20,7 @@ public class HibernateUtil {
         try {
             factory = new AnnotationConfiguration().configure()
                     .addAnnotatedClass(Usuario.class)
+                    .addAnnotatedClass(Carta.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
             System.err.println("Falha ao criar sessionFactory. " + ex);

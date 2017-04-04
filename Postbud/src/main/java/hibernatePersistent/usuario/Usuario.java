@@ -5,8 +5,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "usuario")
-
+@Table (name = "postbud.usuario")
 public class Usuario implements Serializable{
    
    @Id
@@ -21,10 +20,6 @@ public class Usuario implements Serializable{
    
    @Column(name = "senha")
    private String senha;
-   
-   @Column(name = "data_nascimento")
-   @Temporal(javax.persistence.TemporalType.DATE)
-   private Date data_nascimento;
    
 /* Getters and Setters */ 
  
@@ -58,13 +53,5 @@ public class Usuario implements Serializable{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
-    public Date getData_nascimento() {
-        return data_nascimento;
-    }
-    public void setData_nascimento(Date data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }   
 
 }
