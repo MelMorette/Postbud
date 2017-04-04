@@ -28,7 +28,10 @@ public class Carta implements Serializable {
 
     @Column(name = "titulo")
     private String titulo;
-
+    
+    @Column(name = "snlida")
+    private Boolean lida;
+    
     /**
      * @return the codigo
      */
@@ -97,6 +100,20 @@ public class Carta implements Serializable {
      */
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    /**
+     * @return the lida
+     */
+    public Boolean getLida() {
+        return lida;
+    }
+
+    /**
+     * @param lida the lida to set
+     */
+    public void setLida(Boolean lida) {
+        this.lida = lida;
     }
 
 }

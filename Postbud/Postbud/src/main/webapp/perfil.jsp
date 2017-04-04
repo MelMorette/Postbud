@@ -46,10 +46,10 @@
                                     <img src="images/john.png" title="user" alt="user" />
                                 </div>							
                             </div>
-                            <a href="carta.jsp""><button type="submit"><strong>Escrever...</strong></button></a>
+                            <a href="carta.jsp"><button type="submit"><strong>Escrever...</strong></button></a>
                             <a href=""><button type="submit"><strong>Minhas Cartas</strong></button></a>
                             <a href="BuscaCarta"><button type="submit"><strong>Editar Carta</strong></button></a>
-                            <a href="#"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
+                            <a href="Mailbox"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
                         </div>
 
                         <form action="Logout" method="post">

@@ -7,10 +7,14 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.SessionFactory;
 
 public class CartaDAO {
-     private static SessionFactory factory;
+
+    public static List<Carta> getTodas(Usuario user) {
+        Session session = HibernateUtil.abrirSessaoComBD();
+        List<Carta> cartas = session.createQuery("from Carta where destinatario=:user").setString("user", user.getEmail()).list();
+        return cartas;
+    }
 
     public boolean addCarta(Carta carta) throws HibernateException {
         Session session = HibernateUtil.abrirSessaoComBD();
