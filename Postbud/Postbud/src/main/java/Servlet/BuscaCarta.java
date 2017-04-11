@@ -34,7 +34,7 @@ public class BuscaCarta extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         Usuario user = (Usuario) session.getAttribute("User");
-        Carta cartaParaEditar = CartaDAO.getCarta(user);
+        Carta cartaParaEditar = CartaDAO.getCartaHackeado(user);
         session.setAttribute("cartinha", cartaParaEditar);
         response.sendRedirect("editarCarta.jsp");
     }

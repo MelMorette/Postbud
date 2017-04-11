@@ -16,6 +16,12 @@ public class CartaDAO {
         return cartas;
     }
 
+    /**
+     *
+     * @param carta
+     * @return
+     * @throws HibernateException
+     */
     public boolean addCarta(Carta carta) throws HibernateException {
         Session session = HibernateUtil.abrirSessaoComBD();
         Transaction tx = null;
@@ -41,12 +47,46 @@ public class CartaDAO {
         
         return funfou;
     }
+    
+    
+     public void deleteCarta(Carta carta) throws HibernateException {
+        Session session = HibernateUtil.abrirSessaoComBD();
+        Transaction tx = null;
+     
+     
+        try {
+            tx = session.beginTransaction();
 
+            session.delete(carta);
+            
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            throw e;
+        } finally {
+            session.close();
+        }
+        
+    }
+
+    public Carta getCarta(int cartaid) throws Exception {
+        
+        Session session = HibernateUtil.abrirSessaoComBD();
+        
+       Carta carta =  (Carta) session.get(Carta.class, cartaid);
+       
+       return carta;
+    }
+   
+   
     public List<Carta> listaCartas() {
+    
         return null;
     }
     
-    public static Carta getCarta(Usuario user) {
+    public static Carta getCartaHackeado(Usuario user) {
         Session session = HibernateUtil.abrirSessaoComBD();
         Carta carta = (Carta) session.createQuery("from Carta where remetente=:user").setString("user", user.getEmail()).list().get(0);
         return carta;
