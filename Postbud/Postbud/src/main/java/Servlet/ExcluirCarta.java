@@ -1,50 +1,40 @@
 package Servlet;
 
-import Carta.Carta;
-import Carta.CartaDAO;
-import hibernatePersistent.usuario.Usuario;
+import Carta.*;
 import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.hibernate.HibernateException;
 
-@WebServlet(name = "CriarCarta", urlPatterns = {"/CriarCarta"})
-public class CriarCarta extends HttpServlet {
-
+public class ExcluirCarta extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        HttpSession session = request.getSession(true);
-
-        CartaDAO cartaDAO = new CartaDAO();
-        Carta carta = new Carta();
-
-        Usuario user = (Usuario) session.getAttribute("User");
+        response.setContentType("text/html;charset=UTF-8");
         
-        System.out.println("Titulo: " + request.getParameter("titulo"));
-
-        carta.setCorpo(request.getParameter("editor1"));
-        carta.setDestinatario(null);
-        carta.setRemetente(user.getEmail());
-        carta.setTitulo(request.getParameter("titulo"));
-        carta.setLida(Boolean.FALSE);
-
-        boolean funciona = false;
+        HttpSession session = request.getSession(true);
+        PrintWriter out = response.getWriter();
         try {
-            funciona = cartaDAO.addCarta(carta);
-        } catch (HibernateException ex) {
-            ex.printStackTrace();
-            funciona = false;
-        }
-
-        if (funciona) {
-            response.sendRedirect("perfil.jsp");
-        } else {
-            response.sendRedirect("perfil.jsp");
+            Integer id = Integer.parseInt(request.getParameter("id"));
+            
+            System.out.println("ID: " + id);
+            
+            CartaDAO cDAO = new CartaDAO();
+            Carta carta = cDAO.getCarta(id);
+            cDAO.deleteCarta(carta);
+            
+            if (cDAO.getCarta(id) == null) {                
+                RequestDispatcher rd = request.getRequestDispatcher("outbox.jsp");
+                
+                rd.forward(request, response);
+            } else {
+                response.sendRedirect("erro.jsp"); 		
+            }
+        } finally {
+            out.close();
         }
     }
 

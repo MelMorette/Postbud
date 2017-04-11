@@ -20,6 +20,14 @@
         <servlet-name>Mailbox</servlet-name>
         <servlet-class>Servlet.Mailbox</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VisualizarCarta</servlet-name>
+        <servlet-class>Servlet.VisualizarCarta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirCarta</servlet-name>
+        <servlet-class>Servlet.ExcluirCarta</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CadastroUsuario</servlet-name>
         <url-pattern>/CadastroUsuario</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>Mailbox</servlet-name>
         <url-pattern>/Mailbox</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VisualizarCarta</servlet-name>
+        <url-pattern>/VisualizarCarta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirCarta</servlet-name>
+        <url-pattern>/ExcluirCarta</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

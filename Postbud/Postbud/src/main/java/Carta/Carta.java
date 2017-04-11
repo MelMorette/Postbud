@@ -18,7 +18,7 @@ public class Carta implements Serializable {
     private Integer codigo;
 
     @Column(name = "destinatario")
-    private Long destinatario;
+    private String destinatario;
 
     @Column(name = "remetente")
     private String remetente;
@@ -49,14 +49,14 @@ public class Carta implements Serializable {
     /**
      * @return the destinatario
      */
-    public Long getDestinatario() {
+    public String getDestinatario() {
         return destinatario;
     }
 
     /**
      * @param destinatario the destinatario to set
      */
-    public void setDestinatario(Long destinatario) {
+    public void setDestinatario(String destinatario) {
         this.destinatario = destinatario;
     }
 

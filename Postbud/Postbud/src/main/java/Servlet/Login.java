@@ -1,6 +1,5 @@
 package Servlet;
 
-import PostbudUtil.Acesso;
 import hibernatePersistent.usuario.Usuario;
 import hibernatePersistent.usuario.UsuarioDAO;
 import java.io.IOException;
@@ -22,9 +21,9 @@ public class Login extends HttpServlet {
             String password = (request.getParameter("password"));
 
             Usuario user = null;
-            Acesso acesso = new Acesso();
+            UsuarioDAO uDAO = new UsuarioDAO();
             
-            user = acesso.login(email, password);
+            user = uDAO.login(email, password);
 
             if (user == null) {
                 session.invalidate();

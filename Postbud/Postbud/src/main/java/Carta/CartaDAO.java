@@ -1,4 +1,3 @@
-
 package Carta;
 
 import Hibernate.HibernateUtil;
@@ -16,12 +15,6 @@ public class CartaDAO {
         return cartas;
     }
 
-    /**
-     *
-     * @param carta
-     * @return
-     * @throws HibernateException
-     */
     public boolean addCarta(Carta carta) throws HibernateException {
         Session session = HibernateUtil.abrirSessaoComBD();
         Transaction tx = null;
@@ -31,7 +24,7 @@ public class CartaDAO {
             tx = session.beginTransaction();
 
             okay = (Integer) session.save(carta);
-            
+
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -44,21 +37,19 @@ public class CartaDAO {
         if (okay != null) {
             funfou = true;
         }
-        
+
         return funfou;
     }
-    
-    
-     public void deleteCarta(Carta carta) throws HibernateException {
+
+    public void deleteCarta(Carta carta) {
         Session session = HibernateUtil.abrirSessaoComBD();
         Transaction tx = null;
-     
-     
+
         try {
             tx = session.beginTransaction();
 
             session.delete(carta);
-            
+
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -68,30 +59,58 @@ public class CartaDAO {
         } finally {
             session.close();
         }
-        
+
     }
 
-    public Carta getCarta(int cartaid) throws Exception {
-        
+    public Carta getCarta(int cartaid){
+
         Session session = HibernateUtil.abrirSessaoComBD();
-        
-       Carta carta =  (Carta) session.get(Carta.class, cartaid);
-       
-       return carta;
+        Transaction tx = null;
+        Carta carta = null;
+        try {
+            tx = session.beginTransaction();
+
+            carta = (Carta) session.createQuery("from Carta where cod_carta = ?").setInteger(0, cartaid).uniqueResult();
+
+            tx.commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return carta;
     }
-   
-   
-    public List<Carta> listaCartas() {
-    
-        return null;
+
+    public List<Carta> listaCartas(String idUser) {
+        Session session = HibernateUtil.abrirSessaoComBD();
+        Transaction tx = null;
+        List cartas = null;
+        try {
+            tx = session.beginTransaction();
+
+            cartas = session.createQuery("FROM Carta WHERE remetente = :id").setString("id", idUser).list();
+
+            tx.commit();
+        } catch (HibernateException e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return cartas;
     }
-    
+
     public static Carta getCartaHackeado(Usuario user) {
         Session session = HibernateUtil.abrirSessaoComBD();
         Carta carta = (Carta) session.createQuery("from Carta where remetente=:user").setString("user", user.getEmail()).list().get(0);
         return carta;
     }
-    
+
     //TODO criar método para salvar uma carta por cima da que já existe
     //session.update(carta);
 }

@@ -1,9 +1,15 @@
+<%@page import="Carta.Carta"%>
+<%
+    Carta carta = (Carta) session.getAttribute("Carta");
+
+%>
+
 <!DOCTYPE html>
 <html lang="br">
 
     <head>
         <meta charset="utf-8">
-        <title>Carta Postbud</title>
+        <title><%=carta.getTitulo()%></title>
 
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
@@ -24,18 +30,21 @@
                 <form action="CriarCarta" method="post" autocomplete="off">
                     <div class="carta center">
                         <label for="titulo">Título da Carta</label><br/>
-                        <input type="text" id="titulo" name="titulo" ><br/><br/>        
+                        <input type="text" id="titulo" name="titulo" value="<%=carta.getTitulo()%>" disabled><br/><br/>        
                         
-                        <textarea name="editor1"></textarea>
-                        <script>
-                            CKEDITOR.replace('editor1');
-                        </script>
+                        <%=carta.getCorpo()%>
 
                         <br><br>
-                        <button type="submit"><strong>Enviar</strong></button>
+                        <a href="outbox.jsp"><strong>Voltar</strong></a>
                     </div>    
                 </form>
             </div>
+        </div>
+        <div class="luna">
+            <img src="images/luna.png"></img>		
+        </div>
+        <div class="icone">
+            <img src="images/ícone.png"></img>
         </div>
     </body>
 

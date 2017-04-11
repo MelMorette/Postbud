@@ -48,9 +48,9 @@
                                 </div>							
                             </div>
                             <a href="carta.jsp"><button type="submit"><strong>Escrever...</strong></button></a>
-                            <a href=""><button type="submit"><strong>Minhas Cartas</strong></button></a>
+                            <a href="outbox.jsp"><button type="submit"><strong>Cartas Enviadas</strong></button></a>
                             <a href="BuscaCarta.java"><button type="submit"><strong>Editar Carta</strong></button></a>
-                            <a href="inbox.jsp"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
+                            <a href="inbox.jsp"><button type="submit"><strong>Cartas Recebidas</strong></button></a>	
                         </div>
 
                         <form action="Logout" method="post">

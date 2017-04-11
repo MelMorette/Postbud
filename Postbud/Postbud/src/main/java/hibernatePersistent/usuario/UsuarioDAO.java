@@ -11,7 +11,7 @@ public class UsuarioDAO { //Data Access Object
 
     private static SessionFactory factory;
 
-    public Usuario login(String email, String senha) {
+    /*public Usuario login(String email, String senha) {
         Session session = HibernateUtil.abrirSessaoComBD();
         Usuario usuario= null;
         try {
@@ -22,6 +22,30 @@ public class UsuarioDAO { //Data Access Object
             he.printStackTrace();
         }
         return usuario;
+    }*/
+    public Usuario login(String email, String senha) {
+        Session session = HibernateUtil.abrirSessaoComBD();
+        Transaction tx = null;
+        Usuario user = null;
+        try {
+            tx = session.beginTransaction();
+
+            user = (Usuario) session.createQuery("from Usuario where email = :email and senha = :senha").setString("email", email).setString("senha", senha).uniqueResult();
+
+            if (user != null) {
+                return user;
+            }
+
+            tx.commit();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            if (tx != null) {
+                tx.rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return user;
     }
 
     public boolean addUsuario(Usuario usuario) throws HibernateException {
@@ -33,7 +57,7 @@ public class UsuarioDAO { //Data Access Object
             tx = session.beginTransaction();
 
             okay = (String) session.save(usuario);
-            
+
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
