@@ -28,10 +28,10 @@ public class Carta implements Serializable {
 
     @Column(name = "titulo")
     private String titulo;
-    
+              
     @Column(name = "snlida")
     private Boolean lida;
-    
+ 
     /**
      * @return the codigo
      */

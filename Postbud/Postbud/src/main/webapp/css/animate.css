@@ -1201,7 +1201,7 @@ Copyright (c) 2015 Daniel Eden
   }
 }
 
-.fadeInDown {
+.fadeInDown hover{
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
 }

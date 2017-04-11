@@ -1,4 +1,5 @@
 <%@page import="hibernatePersistent.usuario.Usuario"%>
+<%@page import="Servlet.BuscaCarta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
@@ -34,7 +35,7 @@
         <body>
             <div class="container">
                 <div class="top">
-                    <h1 id="title" class="hidden"><span id="logo">Post<span>bud</span></span></h1>
+                    <h1 id="title" class="hidden"><span id="logo">Post<strong>bud</strong></span></h1>
                 </div>
                 <div class="login-box animated fadeInUp">
                     <div class="box-header">
@@ -48,8 +49,8 @@
                             </div>
                             <a href="carta.jsp"><button type="submit"><strong>Escrever...</strong></button></a>
                             <a href=""><button type="submit"><strong>Minhas Cartas</strong></button></a>
-                            <a href="BuscaCarta"><button type="submit"><strong>Editar Carta</strong></button></a>
-                            <a href="Mailbox"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
+                            <a href="BuscaCarta.java"><button type="submit"><strong>Editar Carta</strong></button></a>
+                            <a href="inbox.jsp"><button type="submit"><strong>Caixa de Correio</strong></button></a>	
                         </div>
 
                         <form action="Logout" method="post">
