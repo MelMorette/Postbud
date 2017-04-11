@@ -5,9 +5,11 @@
  */
 package Servlet;
 
-import hibernatePersistent.usuario.Usuario;
-import hibernatePersistent.usuario.UsuarioDAO;
+import Carta.Carta;
+import Carta.CartaDAO;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,21 +24,20 @@ import org.hibernate.HibernateException;
 @WebServlet(name = "DeletarCarta", urlPatterns = {"/DeletarCarta"})
 public class DeletarCarta extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws Exception {
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        Usuario usuario = new Usuario();
-
-        usuario.setNome(request.getParameter("nome"));
-        usuario.setSobrenome(request.getParameter("sobrenome"));
-        usuario.setEmail(request.getParameter("email"));
-        usuario.setSenha(request.getParameter("senha"));
+        
+        
+        
        /** usuario.setAtivar(true);*/
         boolean funciona = false;
         try {
-            funciona = usuarioDAO.addUsuario(usuario);
+        CartaDAO cartaDAO = new CartaDAO();
+    
+        Carta carta = cartaDAO.getCarta(Integer.valueOf(request.getParameter("idcarta")));
+
+            cartaDAO.deleteCarta(carta);
         } catch (HibernateException ex) {
-            ex.printStackTrace();
             funciona = false;
         }
 
@@ -59,7 +60,11 @@ public class DeletarCarta extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      try {
+          processRequest(request, response);
+      } catch (Exception ex) {
+          Logger.getLogger(DeletarCarta.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
 
     /**
@@ -73,7 +78,11 @@ public class DeletarCarta extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      try {
+          processRequest(request, response);
+      } catch (Exception ex) {
+          Logger.getLogger(DeletarCarta.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
 
     /**

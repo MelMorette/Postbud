@@ -67,4 +67,8 @@ public class Usuario implements Serializable{
         this.data_nascimento = data_nascimento;
     }   
 
+    public void setCarta(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

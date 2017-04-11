@@ -27,5 +27,13 @@ public class Carta implements Serializable {
    
    @Column(name = "senha")
    private String senha;
+
+    public void setCarta(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void setId(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }
