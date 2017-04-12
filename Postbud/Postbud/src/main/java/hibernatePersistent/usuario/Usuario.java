@@ -4,7 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "postbud.usuario")
+@Table (name = "postgres.postbud.usuario")
 public class Usuario implements Serializable{
    
    @Id
@@ -19,9 +19,6 @@ public class Usuario implements Serializable{
    
    @Column(name = "senha")
    private String senha;
-   
-   @Column(name = "nickname")
-   private String nickname;
    
    @Column(name = "foto_do_perfil")
    private String profilePic;
@@ -55,14 +52,6 @@ public class Usuario implements Serializable{
     }
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
     }
 
     public String getProfilePic() {

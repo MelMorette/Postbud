@@ -12,12 +12,6 @@ body {
 	margin-left: 340px;
 }
 		
-.luna img{
-   	float: right;
-   	margin-top: -750px;
-	margin-right: 120px;
-	width: 150px;
-}
 .icone img{
 	float: right;
    	margin-top: -590px;
@@ -32,10 +26,9 @@ h1#title {
 	font-size: 3.2em;
 	color: white;
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
-	margin: 0 auto;
+	margin-left: 34%;
 	padding-top: 180px;
 	max-width: 300px;
-	text-align: center;
 	position: relative;
 	top: 0px;
 }
@@ -83,12 +76,15 @@ p.small {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
-
-
 .selected {
 	color: #665851!important;
 	transition: 0.5s;
 }
+.button{
+    
+    margin-left: 40%;
+}
+
 
 /* Animation Delay */
 #logo {

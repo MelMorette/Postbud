@@ -9,7 +9,7 @@
 
 	
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
+        <link rel="icon" href="images/logo.png" type="image/x-icon" />
 	<link rel="stylesheet" href="css/animate.css">
 	
 	<link rel="stylesheet" href="css/inicio.css">

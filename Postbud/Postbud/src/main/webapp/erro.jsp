@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Erro!</title>
+        <link rel="icon" href="images/logo.png" type="image/x-icon" />
 	<link rel="stylesheet" href="css/erro.css">
 	<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200italic,200,300,300italic,400italic,600,600italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<!-- For-Mobile-Apps-and-Meta-Tags -->

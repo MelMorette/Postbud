@@ -16,7 +16,7 @@ h1#title {
 	color: white;
 	text-shadow: 0 0 10px rgba(0,0,0,0.8);
 	margin: 0 auto;
-	padding-top: 180px;
+	padding-top: 150px;
 	max-width: 300px;
 	text-align: center;
 	position: relative;
@@ -56,6 +56,12 @@ p.small {
 	margin: 0;
 }
 
+.conf{
+    
+    margin-top: 10px;
+    text-decoration: none;
+}
+
 .top {
 	margin: 0;
 	padding: 0;
@@ -66,13 +72,19 @@ p.small {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
+.login ul{
+    color:#665851;
+    padding-left: 5px;
+    image-resolution: 10dppx; 
+}
+
 .login-box {
 	background-color: white;
 	max-width: 340px;
 	margin: 0 auto;
 	position: relative;
 	top: 80px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 	border-radius: 5px;
 	box-shadow: 0 5px 50px rgba(0,0,0,0.4);
 	text-align: center;
@@ -148,4 +160,27 @@ p.small {
 .login-box {
   -webkit-animation-duration: 1s;
   -webkit-animation-delay: 1s;
+}
+.bloco{
+    margin-top: 150px;
+    background-color: white;
+    max-width: 310px;
+    max-height: 60px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+    margin-left: 455px;
+    text-align: left;
+    font-family: Andale Mono, monospace;
+    font-size: 15px;
+    color: #888;
+    font-weight: bold;
+}
+
+.bloco a{
+    margin-left: 27px;
+}
+
+.bloco p{
+    padding-top: 10px;
 }

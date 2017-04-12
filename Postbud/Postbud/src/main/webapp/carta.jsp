@@ -7,7 +7,7 @@
 
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
+        <link rel="icon" href="images/logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="css/animate.css">
         <!-- Custom Stylesheet -->
         <link rel="stylesheet" href="css/carta.css">
@@ -32,11 +32,14 @@
                         </script>
 
                         <br><br>
-                        <button type="submit"><strong>Enviar</strong></button>
-                    </div>    
+                        <button type="submit"><strong>Enviar</strong></button>                        
+                    </div>
                 </form>
             </div>
         </div>
+        <div class="button">
+            <a href="perfil.jsp"><button type="submit"><strong>Voltar</strong></button></a>
+         </div>
     </body>
 
     <script>

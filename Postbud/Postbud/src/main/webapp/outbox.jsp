@@ -18,7 +18,7 @@
 
         <!-- Google Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
+        <link rel="icon" href="images/logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" href="css/animate.css">
@@ -54,12 +54,19 @@
                                 <li>
                                     <a href="ExcluirCarta?id=<%=carta.getCodigo()%>">Excluir</a>
                                 </li>
-                            </ul>
+                            </ul>                   
                         </div>
+                                <ul>
+                                     <li>
+                                        <a href="perfil.jsp">Voltar</a>
+                                     </li>
+                                </ul>
                     </div>
+                                
                     <%
                         }
-                    %>	
+                    %>
+                    
                 </div>  
             </div>
         </div>

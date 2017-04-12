@@ -22,7 +22,7 @@
 
             <!-- Google Fonts -->
             <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700|Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
-
+            <link rel="icon" href="images/logo.png" type="image/x-icon" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             
             <link rel="stylesheet" href="css/animate.css">
@@ -43,28 +43,36 @@
                             <div class="modal-content modal-info">
 
                                 <div class="modal-header">
-                                    <h2><strong>Meu Perfil - <%=user.getNome()%></strong></h2>							
-                                    <img src="images/john.png" title="user" alt="user" />
+                                    <h2><strong>Bem-Vindo(a) - <%=user.getNome()%></strong></h2>							
+                                    <img src="images/foto.png" title="user" alt="user" />
                                 </div>							
                             </div>
-                            <a href="carta.jsp"><button type="submit"><strong>Escrever...</strong></button></a>
-                            <a href="outbox.jsp"><button type="submit"><strong>Cartas Enviadas</strong></button></a>
-                            <a href="BuscaCarta.java"><button type="submit"><strong>Editar Carta</strong></button></a>
-                            <a href="inbox.jsp"><button type="submit"><strong>Cartas Recebidas</strong></button></a>	
+                                    <ul>
+                                       <li><img src="images/whrite.png"/><a href="carta.jsp"><button type="submit"><strong>Escrever...</strong></button></a></li>            
+                                       <li><img src="images/send.png"/><a href="outbox.jsp"><button type="submit"><strong>Enviado!</strong></button></a></li> 
+                                       <li><img src="images/recebe.png"/><a href="inbox.jsp"><button type="submit"><strong>Recebido!</strong></button></a></li> 
+                                    </ul>
+                            	
                         </div>
 
                         <form action="Logout" method="post">
                             <button type="submit"><strong>Sair</strong></button>
                         </form>
-                    </div>	
-                    <i style="margin-top: 20px" class="fa fa-cog fa-spin fa-3x fa-lg"></i>							
+                    </div>
+                     <div class="conf">
+                        <a href="#"><img src="images/conf.png"/></a>
+                     </div>
                 </div>				
             </div>
-            <ul>
-                <li><a href="http://www.facebook.com.br" class="facebook"><img src="images/fb.png" title="facebook" alt="facebook" /></a></li>
-                <li><a href="http://www.twitter.com.br" class="twitter"><img src="images/tw.png" title="twitter" alt="twitter" /></a></li>
-                <li><a href="http://www.googleplus.com.br" class="googleplus"><img src="images/gp.png" title="googleplus" alt="googleplus" /></a></li>
-            </ul>	
+              <div class="bloco">
+                <ul class="redes">
+                    <p><strong>Siga-nos nas Redes Sociais!</strong></p>
+                    <a href="http://www.facebook.com.br" class="facebook"><img src="images/fb.png" title="facebook" alt="facebook" /></a>
+                    <a href="http://www.twitter.com.br" class="twitter"><img src="images/tw.png" title="twitter" alt="twitter" /></a>
+                    <a href="http://www.googleplus.com.br" class="googleplus"><img src="images/gp.png" title="googleplus" alt="googleplus" /></a>
+                </ul>
+            </div>
+            	
 
         </body>
 
